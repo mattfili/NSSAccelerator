@@ -1,0 +1,15 @@
+.modal-header
+	h3 Start a conversation
+.modal-body
+	form.form-group
+		label Title
+		input.form-control(type="un" placeholder="Comment Title" ng-model="formData.title")
+	form.form-group
+		label Brief description
+		input.form-control(type="un" placeholder="A few sentences to summarize" ng-model="formData.summary")
+	form.form-group
+		label Brief description of key consideration
+		textarea.form-control(rows="5" placeholder="A longer message goes here" ng-model="formData.content")
+.modal-footer
+	button.btn.btn-default(type="button" ng-click="ok()") Submit
+	button.btn.btn-default(type="button" ng-click="cancel()") Cancel

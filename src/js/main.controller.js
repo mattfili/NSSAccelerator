@@ -1,6 +1,6 @@
 angular.module('valueprop')
 
-.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, $uibModal, $log, $stateParams, $state) {
+.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, GET_FIRE, FIRE_COMMENT, $uibModal, $log, $stateParams, $state) {
 
 	var vm = this;
 
@@ -20,24 +20,59 @@ angular.module('valueprop')
 	    })
 	
 	}
-
-	console.log($state.current.url)
 	
 
 	if ($state.current.url === '/') {
-		var params = false
+		var params = false;
 	} else if ($state.current.url === 'considerations/:id') {
-		var params = true
+		var params = true;
+		GET_FIRE.on('value', function (snap) {
+			console.log('------comment------')
+			console.log(snap)
+			console.log('------comment------')
+			vm.comments = snap.val()
+	}, function (errorObject) {	
+			console.log("The read failed: " + errorObject.code);
+	})
 	}
 
 	vm.params = params;
 
-
 	vm.addComment = function () {
-		console.log('route')
+		var modalInstance = $uibModal.open({
+	      animation: vm.animationsEnabled,
+	      templateUrl: 'assets/components/addComment.html',
+	      controller: 'commModalCtrl'
+	    });
+
+	    modalInstance.result.then(function(formData) {
+	    	FIRE_COMMENT.$add(formData).then(function(result) {
+	    		console.log(result.ref());
+	    	})
+	    })
+	
 	}
 
 
+})
+
+.controller('commModalCtrl', function ($modalInstance, $scope) {
+
+	var vm = this;
+
+	$scope.formData = {
+		title: '',
+		summary: '',
+		content: ''
+	}
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.formData);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 })
 
 .controller('considModalCtrl', function ($modalInstance, $scope) {
