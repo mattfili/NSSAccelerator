@@ -1,12 +1,49 @@
 angular.module('valueprop')
 
-.controller('main', function($scope, FIRE) {
+.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, $uibModal, $log) {
 
 	var vm = this;
 
+	vm.animationsEnabled = true;
+
+	vm.allConsid = FIRE_ARRAY
+
+	vm.addConsideration = function () {
+		var modalInstance = $uibModal.open({
+	      animation: vm.animationsEnabled,
+	      templateUrl: 'assets/components/addConsid.html',
+	      controller: 'considModalCtrl'
+	    });
+
+	    modalInstance.result.then(function(formData) {
+	    	FIRE_ARRAY.$add(formData).then(function(result) {
+	    		console.log(result.ref());
+	    	})
+	    })
+	
+	}
 
 
 
+})
+
+.controller('considModalCtrl', function ($modalInstance, $scope) {
+
+	var vm = this;
+
+	$scope.formData = {
+		description: '',
+		user: '',
+		job: ''
+	}
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.formData);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 })
 
 .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {

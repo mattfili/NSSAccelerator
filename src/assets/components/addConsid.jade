@@ -1,0 +1,16 @@
+.modal-header
+	h3 Contribute to the key considerations
+.modal-body
+	form.form-group
+		label Anonymous Username
+		input.form-control(type="un" placeholder="A Faceless Man" ng-model="formData.user")
+	form.form-group
+		label What makes you so qualified 
+		input.form-control(type="un" placeholder="Worked in tech start-ups" ng-model="formData.job")
+	form.form-group
+		label Brief description of key consideration
+		input.form-control(type="un" placeholder="How do we attract private investor groups?" ng-model="formData.description")
+.modal-footer
+	button.btn.btn-default(type="button" ng-click="ok()") Submit
+	button.btn.btn-default(type="button" ng-click="cancel()") Cancel
+

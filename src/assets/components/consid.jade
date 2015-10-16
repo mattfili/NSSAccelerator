@@ -1,7 +1,12 @@
 div.row
-	h3.text-center Starting the conversation
-	h4.text-center How can we create the best entrepreneurial community in the US?  We want to start by opening up the floor to the cities thought leaders on business, technology, and entreprenurship.  
-	<br> Give us your thoughts
+	.col-lg-12.col-md-12.col-sm-12.col-xs-12
+		h3.text-center Starting the conversation
+		h4.text-center How can we create the best entrepreneurial community in the US?  We want to start by opening up the floor to the cities thought leaders on business, technology, and entreprenurship.  
 .row
 	.col-lg-12.col-md-12.col-sm-12.col-xs-12
-	h4.text-left Considerations  
+		h4.text-left Considerations  
+		button.btn.btn-default.btn-circle.btn-lg(type="button" ng-click="main.addConsideration()")
+			i.glyphicon.glyphicon-plus
+.row
+	.col-lg-12.col-md-12.col-sm-12.col-xs-12
+		ui-view(name="considCards")

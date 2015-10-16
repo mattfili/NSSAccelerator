@@ -1,9 +1,11 @@
 angular.module('valueprop')
 
-.factory('FIRE', function($http, $resource) {
-	return {
-		addConsideration: function (comment) {
-			console.log(comment)
-		}
-	}
+.factory('FIRE_OBJ', function($http, $resource, FIRE_URL, $firebaseObject) {
+	return $firebaseObject( new Firebase(FIRE_URL) );
+	
+})
+
+.factory('FIRE_ARRAY', function($http, $resource, FIRE_URL, $firebaseArray) {
+	return $firebaseArray( new Firebase(FIRE_URL + '/considerations') );
+	
 })

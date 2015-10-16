@@ -1,10 +1,10 @@
-angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'angular-flash.service', 'angular-flash.flash-alert-directive'])
+angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'ui.bootstrap', 'iso'])
 
 .constant('FIRE_URL', 'https://nssaccelerator.firebaseio.com/')
 
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.when('', '/');
-	$urlRouterProvider.otherwise('/landing');
+	$urlRouterProvider.otherwise('/');
 
 	$locationProvider.html5Mode({
 		enabled: false,
@@ -15,18 +15,19 @@ angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase',
 	.state('start', {
 	    abstract: true,
 	    templateUrl: 'assets/landing.html',
-	    controller: 'main'
+	    controller: 'main',
+	    controllerAs: 'main'
   	})
 	.state('start.dash', {
-		url: '/landing',
+		url: '/',
 	    views: {
-	      	'header': {
+	      'header': {
 	        templateUrl: 'assets/components/header.html'
 	      },
-	      	'mission': {
+	      'mission': {
 	        templateUrl: 'assets/components/mission.html'
 	      },
-	      	'program': {
+	      'program': {
 	        templateUrl: 'assets/components/program.html'
 	      },
 	      'consid': {
@@ -35,8 +36,20 @@ angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase',
 	      'login': {
 	      	templateUrl: 'assets/components/login.html',
 	      	controller: 'LoginCtrl'
+	      },
+	      'considCards@start.dash': {
+	      	templateUrl: 'assets/components/considCards.html'
 	      }
 	    }
+	})
+
+	.state('start.dash.consid', {
+		url: 'considerations/:id',
+		views: {
+			'considChatter': {
+				templateUrl: 'assets/components/chatter.html'
+			}
+		}
 	})
 	
 })
