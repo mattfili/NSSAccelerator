@@ -1,5 +1,37 @@
+$bg-darkest: #1F2035;
+$bg-dark: lighten($bg-darkest, 10%);
+
+@mixin large-text {
+	font: {
+		family: Lato;
+		size: 32px;
+		weight: 100;
+	}
+
+	color: black;
+
+}
+
+
+@mixin lato-body {
+	font: {
+		family: Lato;
+		size: 15px;
+		weight: 100;
+	}
+
+}
+
+@mixin body-text {
+	font: {
+		family: Noto Sans;
+		size: 15px;
+		weight: 400;
+	}
+}
+
+
 @import 'styles/header';
 @import 'styles/mission';
 @import 'styles/program';
-@import 'styles/comp';
 @import 'styles/consid';

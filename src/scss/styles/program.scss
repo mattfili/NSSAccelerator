@@ -1,3 +1,53 @@
 #program {
-	
+	width: 60%;
+	margin: 0 auto;
+
+	h3 {
+		margin-top: 40px;
+	}
+	.row {
+		margin-bottom: 30px;
+	}
+
+	h3 {
+	 @include large-text;
+	}
+
+	h4 {
+		font-family: 'Lato';
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-family: 'Lato';
+		padding: 0 20px;
+		line-height: 230%;
+	}
+
+	.content-end {
+		border-bottom: 1px solid #C8C8C8;
+		padding-bottom: 40px;
+	}
+
+	.typcn {
+		font-size: 100px;
+		font-weight: 200;
+
+		&.typcn-world {
+			color: #253D4B;
+		}
+
+		&.typcn-home-outline {
+			color: #755934;
+		}
+
+		&.typcn-group {
+			color: gray;
+		}
+
+		&.typcn-chart-area-outline {
+			color: #162E00;
+		}
+
+	}
 }

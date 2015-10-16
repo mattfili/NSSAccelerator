@@ -52,7 +52,10 @@ module.exports = function(grunt) {
         dest: 'public/lib/build.js',
         cssDest: 'public/lib/build.css',
         mainFiles: {
-          bootstrap: [ 'dist/css/bootstrap.min.css', 'dist/js/bootstrap.min.js' ]
+          bootstrap: [ 
+          'dist/css/bootstrap.min.css', 
+          'dist/js/bootstrap.min.js'
+          ]
         }
       }
     },
@@ -98,6 +101,40 @@ module.exports = function(grunt) {
             filter: 'isFile'
           }
         ]
+      },
+      fonts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'bower_components/bootstrap/dist/fonts/',
+            src: [
+              'glyphicons-halflings-regular.eot',
+              'glyphicons-halflings-regular.svg',
+              'glyphicons-halflings-regular.ttf',
+              'glyphicons-halflings-regular.woff',
+              'glyphicons-halflings-regular.woff2'
+            ],
+            dest: 'public/fonts/',
+            filter: 'isFile'
+          }
+        ]
+      },
+      icons: {
+        files: [
+          {
+            expand: true,
+            cwd: 'bower_components/typicons.font/src/font/',
+            src: [
+              'typicons.eot',
+              'typicons.svg',
+              'typicons.ttf',
+              'typicons.woff',
+              'typicons.svg'
+            ],
+            dest: 'public/lib/',
+            filter: 'isFile'
+          }
+        ]
       }
     },
     cssmin: {
@@ -116,7 +153,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'src/',
-            src: ['**/*.jade', '!**/_*.jade'],
+            src: ['**/*.jade', '!**/_*.jade', '**/**/*.jade'],
             dest: 'public/',
             ext: '.html'
           }
@@ -211,6 +248,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build-dev', [
     'clean',
     'copy',
+    'copy:fonts',
     'sass:dev',
     'babel:dev',
     'bower_concat',

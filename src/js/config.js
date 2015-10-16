@@ -1,4 +1,4 @@
-angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource'])
+angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'angular-flash.service', 'angular-flash.flash-alert-directive'])
 
 .constant('FIRE_URL', 'https://nssaccelerator.firebaseio.com/')
 
@@ -29,11 +29,12 @@ angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource'])
 	      	'program': {
 	        templateUrl: 'assets/components/program.html'
 	      },
-	      	'comp': {
-	        templateUrl: 'assets/components/comp.html'
-	      },
 	      'consid': {
 	        templateUrl: 'assets/components/consid.html'
+	      },
+	      'login': {
+	      	templateUrl: 'assets/components/login.html',
+	      	controller: 'LoginCtrl'
 	      }
 	    }
 	})

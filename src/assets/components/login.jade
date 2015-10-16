@@ -1,0 +1,17 @@
+h4 Login to vote
+h4 Login anonymously
+    form
+      label
+        span email
+        input(type='text', ng-model='email')
+      label
+        span password
+        input(type='password', ng-model='pass')
+      label(ng-cloak='', ng-show='createMode')
+        span confirm pass
+        input(type='password', ng-model='confirm')
+      button(ng-click='login(email, pass)', ng-hide='createMode') Log In
+      button(ng-click='createMode = true', ng-hide='createMode') Register
+      button(ng-cloak='', ng-show='createMode', ng-click='createAccount()') Create Account
+      button(ng-cloak='', ng-show='createMode', ng-click='createMode = false') Cancel
+      p.error(ng-show='err') {{err}}

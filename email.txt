@@ -1,0 +1,67 @@
+youJohn, 
+
+
+
+Hope you’re doing well.  I have a few things for you - my schedule is flexible through the week so let me know when you want to chat or whiteboard.  
+
+I reached out on Slack to NSS with a generalized vision of the program to gauge interest.  I know this may not be the model you end up targeting but I figured it couldn’t hurt to reach out internally. I didn’t get a huge response (16 / ~150) but found some interesting commentary in the ‘comments’ questions at the end.  
+
+https://docs.google.com/forms/d/11Usam3jBVg94o9_-KzZpdS0ManOYOwm5DkqkX45x1BU/viewanalytics
+
+
+
+I’ve been mulling over copy for the value prop page and wanted to know what you think (section headers in bold):
+
+The mission - entrepreneurship as a craft
+
+We talk a lot about software craftsmanship at NSS.  We believe that anyone can take on the challenge of being a developer.  We started NSS 25 years ago to help homegrow Nashville's best tech talent.  So far we've graduated over 9 million developers and we're going strong.
+
+We're growing and we want to do more for Nashville.  Using that same craftman mindset we want to show Nashville's tech talent how to be great entrepreneurs.  We’re looking to create a program that takes the tenants of software craftsmanship and applies them to technology entrepreneurship, echoing similar tenants.
+
+
+Democratized learning; entrepreneurship is a skill that can be taught.
+Responding to market inefficiency by building innovative, disruptive, and connective solutions.
+Entrepreneurial capabilities can be honed through practice; iteration by failing fast and recovering quickly.
+Creating economic value by building businesses that create jobs in the local community.
+Emphasizing a culture of mentorship, continuous learning, and community amongst entrepreneurs.
+Creation of productive partnerships in the community.
+
+
+ The key tenants behind the craftsmen model emphasizes
+
+Democratized learning; anyone can learn to be a developer
+Developers capabilities can be honed with consistent practice
+Culture that emphasizes interaction among professionals in the community
+Creation of partnerships in the community
+
+
+
+
+The Program (an early vision)
+
+The program would focus broadly on technology with students pursuing application dev, game dev, e-commerce, and freelance ventures, amongst others.  Greenhorn developers would be paired with a mentor CTO to create production ready code and scalable infrastructure.
+
+We want to create a community of local business owners to engage our budding entrepreneurs to test and validate ideas in a real market, build innovative and connective technology for local industries, and create physical products using local makers and manufacturers. 
+
+Entrepreneurs in resident would go from idea to revenue-dollar-one, working in and out of the classroom through an intensive curriculum guided by a network of Nashville's brightest professional talent.  
+
+
+
+Program Compensation
+
+We’re envisioning a model that would take no equity and / or a nominal tuition fee, or an equity model that contributes profits back into the program. The mission of the program would be to create a self-sustaining / self-perpetuating model.
+
+
+
+Considerations to start a discussion
+
+How do we encourage collaboration amongst existing programs (e.g., JumpStart, Economic Dev) rather than inciting competition?  Potentially collaborating on events, programing, best-practice, and mentorship.
+
+How can we encourage collaboration between tech talent and local industry (e.g., services, manufacturers, bars, restaurants, music venues, musicians, etc.) to drive innovation and the development of connective technology?
+
+How do we attract quality senior mentors and incentivize their contribution to the businesses they mentor?
+
+How do we develop high quality programming that is generalized enough to suit a wide array of technology businesses and specific enough to help entrepreneurs in residents work through niche issues?
+
+How do we create a compensation model that would create a sustainable model for the program, incentivize quality mentors, and nominally impact entrepreneurs in resident (if at all)?
+
