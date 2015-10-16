@@ -52,9 +52,9 @@ module.exports = function(grunt) {
         dest: 'public/lib/build.js',
         cssDest: 'public/lib/build.css',
         dependencies: {
-          'isotope': [
-          "angular",
+          'angular-isotope': [
           "jquery",
+          "angular",
           "angular-animate",
           "bootstrap",
           "angular-ui-router",
@@ -63,11 +63,16 @@ module.exports = function(grunt) {
           "angularfire",
           "firebase",
           "angular-bootstrap",
+          "jquery-bridget",
+          'get-style-property',
           "get-size",
+          'eventEmitter',
+          'eventie',
+          'doc-ready',
+          'isotope',
           "matches-selector",
-          'outlayer',
-          "masonry",
-          "jquery-bridget"
+          'fizzy-ui-utils',
+          'outlayer'
           ]
         },
         mainFiles: {

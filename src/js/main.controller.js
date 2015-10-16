@@ -6,8 +6,6 @@ angular.module('valueprop')
 
 	vm.animationsEnabled = true;
 
-	vm.allConsid = FIRE_ARRAY
-
 	vm.addConsideration = function () {
 		var modalInstance = $uibModal.open({
 	      animation: vm.animationsEnabled,
@@ -44,6 +42,17 @@ angular.module('valueprop')
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
+})
+
+.controller('considCtrl', function (FIRE, $scope) {
+
+	var vm = this;
+
+	FIRE.on('value', function (snap) {
+		$scope.consid = snap.val()
+	}, function (errorObject) {	
+		console.log("The read failed: " + errorObject.code);
+	})
 })
 
 .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {

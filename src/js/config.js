@@ -1,4 +1,4 @@
-angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'ui.bootstrap'])
+angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'ui.bootstrap', 'iso' ,'iso.directives', 'iso.services'])
 
 .constant('FIRE_URL', 'https://nssaccelerator.firebaseio.com/')
 
@@ -38,7 +38,9 @@ angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase',
 	      	controller: 'LoginCtrl'
 	      },
 	      'considCards@start.dash': {
-	      	templateUrl: 'assets/components/considCards.html'
+	      	templateUrl: 'assets/components/considCards.html',
+	      	controller: 'considCtrl',
+	      	controllerAs: 'considCtrl'
 	      }
 	    }
 	})
