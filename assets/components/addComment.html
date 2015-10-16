@@ -1,0 +1,22 @@
+
+<div class="modal-header">
+  <h3>Start a conversation</h3>
+</div>
+<div class="modal-body">
+  <form class="form-group">
+    <label>Title</label>
+    <input type="un" placeholder="Comment Title" ng-model="formData.title" class="form-control"/>
+  </form>
+  <form class="form-group">
+    <label>Brief description</label>
+    <input type="un" placeholder="A few sentences to summarize" ng-model="formData.summary" class="form-control"/>
+  </form>
+  <form class="form-group">
+    <label>Brief description of key consideration</label>
+    <textarea rows="5" placeholder="A longer message goes here" ng-model="formData.content" class="form-control"></textarea>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" ng-click="ok()" class="btn btn-default">Submit</button>
+  <button type="button" ng-click="cancel()" class="btn btn-default">Cancel</button>
+</div>

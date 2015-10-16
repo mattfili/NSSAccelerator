@@ -1,0 +1,24 @@
+
+<div id="considCard" class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <h3 class="text-center">Starting the conversation</h3>
+    <h4 class="text-center">How can we create the best entrepreneurial community in the US?  We want to start by opening up the floor to the cities thought leaders on business, technology, and entreprenurship.  </h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div opt-kind="opt-kind" ok-key="filter" class="btn-group">
+      <button type="button" ok-sel="*" class="btn btn-default active">Show All</button>
+      <button type="button" ok-sel=".date" class="btn btn-default btn-default">Most Recent</button>
+      <button type="button" ok-sel=".popular" class="btn btn-default btn-default">Loudest Conversations</button>
+      <button type="button" ng-click="main.addConsideration()" ng-if="!main.params" class="btn btn-primary">+ Add</button>
+      <button type="button" ng-click="main.addComment()" ng-if="main.params" class="btn btn-primary">+ Add</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <ui-view name="considCards"></ui-view>
+    <ui-view name="considChatter"></ui-view>
+  </div>
+</div>

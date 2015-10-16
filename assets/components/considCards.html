@@ -1,0 +1,9 @@
+
+<div id="considerationCards">
+  <div isotope-container="isotope-container" class="list-unstyled center-block">
+    <div type="submit" ng-repeat="($id, questions) in consid" isotope-item="isotope-item" ui-sref="start.dash.consid({id: $id})" class="card card-block {{$id}}">
+      <h5 class="card-title">{{questions.job}}</h5><small class="text-muted">{{questions.user}}</small>
+      <div opt-kind="" ok-key="filter"><a ui-sref="start.dash.consid({id: $id})" ok-sel=".{{$id}}" class="card-text">{{questions.description}}</a></div>
+    </div>
+  </div>
+</div>

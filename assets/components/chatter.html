@@ -1,0 +1,9 @@
+
+<div id="considerationConvo">
+  <div isotope-container="isotope-container" class="list-unstyled center-block">
+    <div type="submit" ng-repeat="($id, comments) in main.comments" isotope-item="isotope-item" class="card card-block {{$id}}">
+      <h5 class="card-title">{{comments.title}}</h5><small class="text-muted">{{comments.summary}}</small>
+      <p class="card-text">{{comments.content}}</p>
+    </div>
+  </div>
+</div>
