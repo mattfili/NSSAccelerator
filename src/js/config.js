@@ -1,4 +1,4 @@
-angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'ui.bootstrap', 'iso'])
+angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase', 'ui.bootstrap'])
 
 .constant('FIRE_URL', 'https://nssaccelerator.firebaseio.com/')
 

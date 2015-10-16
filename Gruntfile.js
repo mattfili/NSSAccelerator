@@ -51,10 +51,33 @@ module.exports = function(grunt) {
       main: {
         dest: 'public/lib/build.js',
         cssDest: 'public/lib/build.css',
+        dependencies: {
+          'isotope': [
+          "angular",
+          "jquery",
+          "angular-animate",
+          "bootstrap",
+          "angular-ui-router",
+          "angular-resource",
+          "typicons.font",
+          "angularfire",
+          "firebase",
+          "angular-bootstrap",
+          "get-size",
+          "matches-selector",
+          'outlayer',
+          "masonry",
+          "jquery-bridget"
+          ]
+        },
         mainFiles: {
           bootstrap: [ 
           'dist/css/bootstrap.min.css', 
           'dist/js/bootstrap.min.js'
+          ],
+          outlayer: [
+          'item.js',
+          'outlayer.js'
           ]
         }
       }
