@@ -48,7 +48,7 @@ angular.module('valueprop', ['ui.router', 'ngAnimate', 'ngResource', 'firebase',
 	.state('start.dash.consid', {
 		url: 'considerations/:id',
 		views: {
-			'considChatter': {
+			'considChatter@start.dash': {
 				templateUrl: 'assets/components/chatter.html'
 			}
 		}

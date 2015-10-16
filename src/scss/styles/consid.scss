@@ -8,16 +8,37 @@
 
 	h3 {
 	 @include large-text;
+	 margin-bottom: 40px;
 	}
 
 	h4 {
 		font-family: 'Lato';
+		font-size: 16px;
+		margin: 0 auto;
 		margin-bottom: 20px;
+		width: 40%;
+		line-height: 200%;
 	}
 
 	p {
 		font-family: 'Lato';
 		padding: 0 20px;
 		line-height: 230%;
+	}
+
+	.btn-group {
+		margin-left: 130px;
+
+		button {
+		transition: all 0.3s ease 0s;
+		}
+
+		button.btn-default:hover {
+			background: #A8A8A8;
+		}
+
+		button.btn-primary:hover {
+			background: #0A4C98;
+		}
 	}
 }

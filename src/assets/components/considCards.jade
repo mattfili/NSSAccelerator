@@ -1,9 +1,11 @@
-#considerationCards.center-block
+#considerationCards
 	div(isotope-container="isotope-container").list-unstyled.center-block
-		.card.card-block(ng-repeat="($id, questions) in consid" isotope-item="isotope-item")
+		.card.card-block(type="submit" ng-repeat="($id, questions) in consid"  class="{{$id}}" isotope-item="isotope-item" ui-sref="start.dash.consid({id: $id})")
 			h5.card-title {{questions.job}}
 			small.text-muted {{questions.user}}
-			p.card-text {{questions.description}}
+			div(opt-kind="" ok-key="filter")
+				a.card-text(ui-sref="start.dash.consid({id: $id})" ok-sel='.'+'{{$id}}') {{questions.description}}
+
 
 
 

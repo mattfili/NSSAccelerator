@@ -11,12 +11,24 @@
 			margin-bottom: 5px;
 		}
 
-		p {
+		a {
+			display: block;
+			text-decoration: none;
+			color: black;
 			padding: 5px 0 5px 0;
 			font-family: 'Lato';
 			font-size: 14px;
 			line-height: 200%;
 		}
+
+		&:hover {
+			&.card {
+				border: 1px solid orange;
+				transition-delay: .1s;
+				transition-duration: .5s;
+			}
+		}
+
 	}
 
 }

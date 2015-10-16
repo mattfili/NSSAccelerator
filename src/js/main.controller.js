@@ -1,6 +1,6 @@
 angular.module('valueprop')
 
-.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, $uibModal, $log) {
+.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, $uibModal, $log, $stateParams, $state) {
 
 	var vm = this;
 
@@ -21,6 +21,21 @@ angular.module('valueprop')
 	
 	}
 
+	console.log($state.current.url)
+	
+
+	if ($state.current.url === '/') {
+		var params = false
+	} else if ($state.current.url === 'considerations/:id') {
+		var params = true
+	}
+
+	vm.params = params;
+
+
+	vm.addComment = function () {
+		console.log('route')
+	}
 
 
 })
@@ -44,7 +59,7 @@ angular.module('valueprop')
   };
 })
 
-.controller('considCtrl', function (FIRE, $scope) {
+.controller('considCtrl', function (FIRE, $scope, $stateParams, $state) {
 
 	var vm = this;
 
@@ -53,6 +68,15 @@ angular.module('valueprop')
 	}, function (errorObject) {	
 		console.log("The read failed: " + errorObject.code);
 	})
+
+	console.log($state)
+	console.log($stateParams)
+
+	if (!$stateParams) {
+		$scope.params === false
+	} else {
+		$scope.params === true
+	}
 })
 
 .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
