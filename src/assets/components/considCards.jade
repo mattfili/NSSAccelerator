@@ -1,10 +1,9 @@
-//- div(masonry)
-//- 	.masonry-brick(masonry-brick ng-repeat="($id, questions) in consid" ng-class="{'masonry-brick': true}")
-//- 		{{questions.user}}
-//- 		{{questions.jobs}}
-//- 		{{questions.description}}
-ul(isotope-container="isotope-container")
-	li(ng-repeat="($id, questions) in consid" isotope-item="isotope-item")
-		p {{questions.user}}
-		p {{questions.jobs}}
-		p {{questions.description}}
+#considerationCards.center-block
+	div(isotope-container="isotope-container").list-unstyled.center-block
+		.card.card-block(ng-repeat="($id, questions) in consid" isotope-item="isotope-item")
+			h5.card-title {{questions.job}}
+			small.text-muted {{questions.user}}
+			p.card-text {{questions.description}}
+
+
+

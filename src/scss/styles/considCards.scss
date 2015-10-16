@@ -1,0 +1,22 @@
+
+#considerationCards {
+	margin-left: 120px;
+
+	.card {
+		max-width: 350px;
+		border: 1px solid #C8C8C8;
+		margin: 10px;
+
+		h5 {
+			margin-bottom: 5px;
+		}
+
+		p {
+			padding: 5px 0 5px 0;
+			font-family: 'Lato';
+			font-size: 14px;
+			line-height: 200%;
+		}
+	}
+
+}
