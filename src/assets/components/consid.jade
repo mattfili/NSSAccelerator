@@ -4,13 +4,5 @@ div.row#considCard
 		h4.text-center How can we create the best entrepreneurial community in the US?  We want to start by opening up the floor to the cities thought leaders on business, technology, and entreprenurship.  
 .row
 	.col-lg-12.col-md-12.col-sm-12.col-xs-12
-		div.btn-group(opt-kind ok-key="filter")
-			button.btn.btn-default.active(type="button" ok-sel="*") Show All
-			button.btn.btn-default.btn-default(type="button" ok-sel='.date') Most Recent
-			button.btn.btn-default.btn-default(type="button" ok-sel='.popular') Loudest Conversations
-			button.btn.btn-primary(type="button" ng-click="main.addConsideration()" ng-if='!main.params') + Add
-			button.btn.btn-primary(type="button" ng-click="main.addComment()" ng-if='main.params') + Add
-.row
-	.col-lg-12.col-md-12.col-sm-12.col-xs-12
 		ui-view(name="considCards")
 		ui-view(name="considChatter")

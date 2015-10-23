@@ -1,10 +1,16 @@
 #considerationCards
-	div(isotope-container="isotope-container").list-unstyled.center-block
-		.card.card-block(type="submit" ng-repeat="($id, questions) in consid"  class="{{$id}}" isotope-item="isotope-item" ui-sref="start.dash.consid({id: $id})")
+	div.btn-group(opt-kind ok-key="filter")
+		button.btn.btn-default.active(type="button" ok-sel="*" ng-click="considCtrl.changeState()" ng-if="$root.params") Show All
+		button.btn.btn-default.btn-default(type="button" ok-sel='.date') Most Recent
+		button.btn.btn-default.btn-default(type="button" ok-sel='.popular') Loudest Conversations
+	button.btn.btn-primary(type="button" ng-click="main.addConsideration()" ng-if='!$root.params') + Add
+	button.btn.btn-primary(type="button" ng-click="main.addComment()" ng-if='$root.params') + Add
+
+	div(isotope-container="isotope-container" ng-cloak="" id="isotopeContainer").list-unstyled.center-block.considHeight
+		.card.card-block(ng-repeat="($id, questions) in consid"  class="{{$id}}" opt-kind="" ok-key="filter" isotope-item="" ui-sref="start.dash.consid({id: $id})")
 			h5.card-title {{questions.job}}
 			small.text-muted {{questions.user}}
-			div(opt-kind="" ok-key="filter")
-				a.card-text(ui-sref="start.dash.consid({id: $id})" ok-sel='.'+'{{$id}}') {{questions.description}}
+			a.card-text(ui-sref="start.dash.consid({id: $id})" ok-sel='.'+'{{$id}}') {{questions.description}}
 
 
 

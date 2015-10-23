@@ -2,6 +2,10 @@
 #considerationCards {
 	margin-left: 120px;
 
+	.considHeight {
+		min-height: 500px;
+	}
+
 	.card {
 		max-width: 350px;
 		border: 1px solid #C8C8C8;

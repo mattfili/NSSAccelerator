@@ -1,6 +1,6 @@
 angular.module('valueprop')
 
-.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, GET_FIRE, FIRE_COMMENT, $uibModal, $log, $stateParams, $state) {
+.controller('main', function($scope, FIRE_OBJ, FIRE_ARRAY, GET_FIRE, FIRE_COMMENT, $uibModal, $log, $stateParams, $state, $rootScope) {
 
 	var vm = this;
 
@@ -20,41 +20,57 @@ angular.module('valueprop')
 	    })
 	
 	}
+
+  vm.addComment = function () {
+    var modalInstance = $uibModal.open({
+        animation: vm.animationsEnabled,
+        templateUrl: 'assets/components/addComment.html',
+        controller: 'commModalCtrl'
+      });
+
+      modalInstance.result.then(function(formData) {
+        FIRE_COMMENT.$add(formData).then(function(result) {
+          console.log(result.ref());
+        })
+      })
+  
+  }
 	
 
-	if ($state.current.url === '/') {
-		var params = false;
-	} else if ($state.current.url === 'considerations/:id') {
-		var params = true;
-		GET_FIRE.on('value', function (snap) {
-			console.log('------comment------')
-			console.log(snap)
-			console.log('------comment------')
-			vm.comments = snap.val()
-	}, function (errorObject) {	
-			console.log("The read failed: " + errorObject.code);
-	})
-	}
+  $rootScope.$on('$stateChangeStart', function (toState, fromState) {
+    console.log(toState)
+    console.log(fromState)
 
-	vm.params = params;
+   if (fromState.name === 'start.dash.consid') {
+    $rootScope.params = true
 
-	vm.addComment = function () {
-		var modalInstance = $uibModal.open({
-	      animation: vm.animationsEnabled,
-	      templateUrl: 'assets/components/addComment.html',
-	      controller: 'commModalCtrl'
-	    });
+    GET_FIRE.on('value', function (snap) {
+      vm.comments = snap.val()
+  }, function (errorObject) { 
+      console.log("The read failed: " + errorObject.code);
+  })
+   } else if (fromState.name === 'start.dash') {
+    $rootScope.params = false
+   }
 
-	    modalInstance.result.then(function(formData) {
-	    	FIRE_COMMENT.$add(formData).then(function(result) {
-	    		console.log(result.ref());
-	    	})
-	    })
-	
-	}
+  })
+
+    $rootScope.$on('$stateChangeSuccess', function (toState, fromState) {
+    console.log(toState)
+    console.log(fromState)
+
+   if (fromState.name === 'start.dash') {
+      $rootScope.$broadcast('iso-init', {name:null, params:null})
+
+   } 
+
+  })
+
 
 
 })
+
+
 
 .controller('commModalCtrl', function ($modalInstance, $scope) {
 
@@ -94,7 +110,7 @@ angular.module('valueprop')
   };
 })
 
-.controller('considCtrl', function (FIRE, $scope, $stateParams, $state) {
+.controller('considCtrl', function (FIRE, $scope, $stateParams, $state, $uibModal, $rootScope) {
 
 	var vm = this;
 
@@ -104,15 +120,20 @@ angular.module('valueprop')
 		console.log("The read failed: " + errorObject.code);
 	})
 
-	console.log($state)
-	console.log($stateParams)
 
-	if (!$stateParams) {
-		$scope.params === false
-	} else {
-		$scope.params === true
-	}
+
+
+  vm.changeState = _.debounce(function() {
+    $rootScope.$broadcast('iso-init', {name:null, params:null})
+     // $scope.$emit('iso-method', {name: reloadItems, params:null});
+    $state.go('start.dash')
+  }, 1000)
+
+
+
 })
+
+
 
 .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
     $scope.email = null;
@@ -174,7 +195,6 @@ angular.module('valueprop')
     }
 
     function ucfirst (str) {
-      // inspired by: http://kevin.vanzonneveld.net
       str += '';
       var f = str.charAt(0).toUpperCase();
       return f + str.substr(1);
